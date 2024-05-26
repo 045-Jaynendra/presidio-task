@@ -10,7 +10,7 @@ const HomePage = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/property/getAllproperties"
+          "/api/property/getAllproperties"
         );
         setProperties(response.data);
       } catch (error) {

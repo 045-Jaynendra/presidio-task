@@ -11,7 +11,7 @@ const TenantRequests = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/request/getTenantRequest",
+          "/api/request/getTenantRequest",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -26,7 +26,7 @@ const TenantRequests = () => {
         );
         const pendingPropertyDetailsPromises = pendingRequests.map((request) =>
           axios
-            .get(`http://localhost:4000/api/property/${request.property_id}`, {
+            .get(`/api/property/${request.property_id}`, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
               },
@@ -47,7 +47,7 @@ const TenantRequests = () => {
           (request) =>
             axios
               .get(
-                `http://localhost:4000/api/property/${request.property_id}`,
+                `/api/property/${request.property_id}`,
                 {
                   headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -75,7 +75,7 @@ const TenantRequests = () => {
   const handleDeleteRequest = async (requestId) => {
     try {
       await axios.delete(
-        `http://localhost:4000/api/request/deleteRequest/${requestId}`,
+        `/api/request/deleteRequest/${requestId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

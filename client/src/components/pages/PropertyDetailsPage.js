@@ -23,7 +23,7 @@ const DetailsPage = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/property/getLandlordProperties/${userId}`,
+          `/api/property/getLandlordProperties/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -41,7 +41,7 @@ const DetailsPage = () => {
 
   const handleDeleteProperty = async (propertyId) => {
     try {
-      await axios.delete(`http://localhost:4000/api/property/${propertyId}`, {
+      await axios.delete(`/api/property/${propertyId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -63,7 +63,7 @@ const DetailsPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/property/createProperty",
+        "/api/property/createProperty",
         { ...newProperty, landlord: userId },
         {
           headers: {
@@ -91,7 +91,7 @@ const DetailsPage = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/property/${currentProperty._id}`,
+        `/api/property/${currentProperty._id}`,
         { ...newProperty, landlord: userId },
         {
           headers: {

@@ -10,7 +10,7 @@ const RequestPage = () => {
     const fetchRequests = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/request/getLandlordRequest",
+          "/api/request/getLandlordRequest",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -32,7 +32,7 @@ const RequestPage = () => {
     const fetchPropertyDetails = async (propertyId) => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/property/${propertyId}`,
+          `/api/property/${propertyId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -54,7 +54,7 @@ const RequestPage = () => {
   const handleRequestUpdate = async (requestId, status) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/request/updateRequest/${requestId}`,
+        `/api/request/updateRequest/${requestId}`,
         { status },
         {
           headers: {

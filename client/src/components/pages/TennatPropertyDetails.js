@@ -9,7 +9,7 @@ const TenantPropertyDetails = () => {
     const fetchApprovedProperties = async () => {
       try {
         const requestsResponse = await axios.get(
-          "http://localhost:4000/api/request/getTenantRequest",
+          "/api/request/getTenantRequest",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -21,7 +21,7 @@ const TenantPropertyDetails = () => {
         );
         const propertyDetailsPromises = approvedRequests.map((request) =>
           axios.get(
-            `http://localhost:4000/api/property/${request.property_id}`,
+            `/api/property/${request.property_id}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,

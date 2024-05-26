@@ -10,7 +10,7 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/tenant/profile`,
+          `/api/tenant/profile`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

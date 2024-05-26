@@ -11,7 +11,7 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/landlord/profile`,
+          `/api/landlord/profile`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

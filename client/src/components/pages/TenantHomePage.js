@@ -11,7 +11,7 @@ const TenantHomePage = () => {
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/property/getAllproperties"
+          "/api/property/getAllproperties"
         );
         setProperties(response.data);
       } catch (error) {
@@ -47,7 +47,7 @@ const TenantHomePage = () => {
   const handleInterest = async (propertyId) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/request/createRequest/${propertyId}`,
+        `/api/request/createRequest/${propertyId}`,
         {},
         {
           headers: {
@@ -70,7 +70,7 @@ const TenantHomePage = () => {
 
   const handleLike = async (propertyId) => {
     try {
-      await axios.post(`http://localhost:4000/api/property/like/${propertyId}`);
+      await axios.post(`/api/property/like/${propertyId}`);
       setProperties(properties.map(property =>
         property._id === propertyId ? { ...property, likes: property.likes + 1 } : property
       ));

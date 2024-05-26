@@ -14,7 +14,7 @@ const LandlordPropertyCreation = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:4000/api/landlord/properties",
+        "/api/landlord/properties",
         {
           method: "POST",
           headers: {

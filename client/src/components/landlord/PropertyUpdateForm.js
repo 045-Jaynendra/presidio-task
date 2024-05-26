@@ -14,7 +14,7 @@ const LandlordPropertyUpdate = ({ property }) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:4000/api/landlord/properties/${property._id}`,
+        `/api/landlord/properties/${property._id}`,
         {
           method: "PUT",
           headers: {

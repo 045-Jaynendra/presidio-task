@@ -10,7 +10,7 @@ const LandlordPropertyManagement = () => {
   const fetchLandlordProperties = async () => {
     try {
       const response = await fetch(
-        "http://localhost:4000/api/landlord/properties",
+        "/api/landlord/properties",
         {
           method: "GET",
           headers: {
@@ -32,7 +32,7 @@ const LandlordPropertyManagement = () => {
   const handleDeleteProperty = async (propertyId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/landlord/properties/${propertyId}`,
+        `/api/landlord/properties/${propertyId}`,
         {
           method: "DELETE",
           headers: {
