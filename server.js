@@ -19,6 +19,11 @@ const PORT = 4000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.json(__dirname, 'build')))
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
 app.use("/api/landlord", require("./routes/landlordRoutes"));
 app.use('/api/property', require("./routes/propertyRoutes"));
 app.use('/api/request', require("./routes/requestRoutes"));
